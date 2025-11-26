@@ -603,7 +603,9 @@ const ResearchPapers: React.FC = () => {
     },
   ];
 
-const renderAuthors = (s: string) => {
+const sortedPapers = [...researchPapers].sort((a, b) => b.year - a.year);
+
+  const renderAuthors = (s: string) => {
     const html = s
       .replace(/Biswas,\s*A\*?/g, "<strong>Biswas, A</strong>")
       .replace(/Biswas,\s*Ankur/g, "<strong>Biswas, Ankur</strong>");
@@ -628,29 +630,31 @@ const renderAuthors = (s: string) => {
           <table className="min-w-full table-auto border border-gray-300">
             <thead className="bg-gray-200 text-center font-semibold">
               <tr>
-                <th className="px-4 py-2">Name</th>
-                <th className="px-4 py-2">Title</th>
-                <th className="px-4 py-2">Year</th>
-                <th className="px-4 py-2">Publisher</th>
-                <th className="px-4 py-2">Impact Factor</th>
-                <th className="px-4 py-2">NAAS Rating</th>
+                <th className="px-4 py-2 text-center">Name</th>
+                <th className="px-4 py-2 text-center">Title</th>
+                <th className="px-4 py-2 text-center">Year</th>
+                <th className="px-4 py-2 text-center">Publisher</th>
+                <th className="px-4 py-2 text-center">Impact Factor</th>
+                <th className="px-4 py-2 text-center">NAAS Rating</th>
               </tr>
             </thead>
 
             <tbody>
-              {researchPapers.map((p, idx) => (
+              {sortedPapers.map((p, idx) => (
                 <tr
                   key={idx}
                   className={`${
-                    idx % 2 === 0 ? "bg-white" : "bg-gray-200"
+                    idx % 2 === 0 ? 'bg-white' : 'bg-gray-200'
                   } hover:bg-gray-100 text-left`}
                 >
                   <td className="align-top px-4 py-2">{renderAuthors(p.authors)}</td>
                   <td className="align-top px-4 py-2">{p.title}</td>
-                  <td className="align-top px-4 py-2">{p.year}</td>
+                  <td className="align-top px-4 py-2 text-center">{p.year}</td>
                   <td className="align-top px-4 py-2">{p.publisher}</td>
-                  <td className="align-top px-4 py-2">{p.impactFactor || ""}</td>
-                  <td className="align-top px-4 py-2">{p.naas || ""}</td>
+                  <td className="align-top px-4 py-2 text-center">
+                    {p.impactFactor || ''}
+                  </td>
+                  <td className="align-top px-4 py-2 text-center">{p.naas || ''}</td>
                 </tr>
               ))}
             </tbody>

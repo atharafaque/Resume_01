@@ -2,17 +2,17 @@ import React from 'react';
 
 const ResearchGuide: React.FC = () => {
   const chairmanStudents = [
-    { name: 'Mr. Rakesh Chhalotre', roll: '12610', level: 'Ph.D.', subject: 'Agril. Statistics', status: '(Ongoing)' },
-    { name: 'Mr. Bappa Saha', roll: '21416', level: 'M.Sc.', subject: 'Agril. Statistics', status: '' },
-    { name: 'Mr. Akarsh Singh', roll: '21599', level: 'M.Sc.', subject: 'Agril. Statistics', status: '' },
-    { name: 'Mr. Umesh T.H.', roll: '21847', level: 'M.Sc.', subject: 'Agril. Statistics', status: '' },
-    { name: 'Ms. Punuru Lingamma', roll: '21855', level: 'M.Sc.', subject: 'Agril. Statistics', status: '' }
+    { name: 'Mr. Rakesh Chhalotre', roll: '12610', level: 'Ph.D.', subject: 'Agril. Statistics', status: 'Ongoing' },
+    { name: 'Mr. Bappa Saha', roll: '21416', level: 'M.Sc.', subject: 'Agril. Statistics', status: 'Completed' },
+    { name: 'Mr. Akarsh Singh', roll: '21599', level: 'M.Sc.', subject: 'Agril. Statistics', status: 'Completed' },
+    { name: 'Mr. Umesh T.H.', roll: '21847', level: 'M.Sc.', subject: 'Agril. Statistics', status: 'Completed' },
+    { name: 'Ms. Punuru Lingamma', roll: '21855', level: 'M.Sc.', subject: 'Agril. Statistics', status: 'Completed' }
   ];
 
   const coChairmanStudents = [
-    { name: 'Mr. Veershetty', roll: '11998', level: 'Ph.D.', subject: 'Agril. Statistics', status: '(Ongoing)' },
-    { name: 'Ms. Moumita Baishya', roll: '11714', level: 'Ph.D.', subject: 'Agril. Statistics', status: '' },
-    { name: 'Mr. Swarup Bera', roll: '21849', level: 'M.Sc.', subject: 'Agril. Statistics', status: '' }
+    { name: 'Mr. Veershetty', roll: '11998', level: 'Ph.D.', subject: 'Agril. Statistics', status: 'Ongoing' },
+    { name: 'Ms. Moumita Baishya', roll: '11714', level: 'Ph.D.', subject: 'Agril. Statistics', status: 'Completed' },
+    { name: 'Mr. Swarup Bera', roll: '21849', level: 'M.Sc.', subject: 'Agril. Statistics', status: 'Completed' }
   ];
 
   return (

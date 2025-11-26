@@ -67,7 +67,10 @@ const Awards: React.FC = () => {
   ];
 
   const academicRankings: AcademicRanking[] = [
-    { title: "1st Rank in ICAR Agricultural Research Service (ARS) Examination", year: "2010" },
+    {
+      title: "1st Rank in ICAR Agricultural Research Service (ARS) Examination",
+      year: "2010",
+    },
     { title: "1st Rank in IARI Ph.D. Entrance Examination", year: "2009" },
     { title: "4th Rank in ICAR JRF exam AIEEA-PG", year: "2007" },
   ];
@@ -77,6 +80,7 @@ const Awards: React.FC = () => {
       <h2 className="text-3xl font-bold text-blue-900 mb-8">Awards &amp; Honors</h2>
 
       <div className="space-y-8">
+        {/* ====== AWARDS TABLE ====== */}
         <div className="w-full">
           <h5
             className="text-white text-center py-1 mb-3 rounded"
@@ -86,16 +90,22 @@ const Awards: React.FC = () => {
           </h5>
 
           <div className="overflow-x-auto">
-            <table className="min-w-full table-auto border border-gray-200">
-              <thead className="bg-gray-100">
+            <table className="min-w-full table-auto border border-gray-300">
+              <thead className="bg-gray-200 text-center font-semibold">
                 <tr>
-                  <th className="px-4 py-2 text-left">Award</th>
-                  <th className="px-4 py-2 text-left">Details</th>
+                  <th className="px-4 py-2 text-center">Award</th>
+                  <th className="px-4 py-2 text-center">Details</th>
                 </tr>
               </thead>
+
               <tbody>
                 {awards.map((award, idx) => (
-                  <tr key={idx} className="even:bg-gray-50 hover:bg-gray-100">
+                  <tr
+                    key={idx}
+                    className={`${
+                      idx % 2 === 0 ? "bg-white" : "bg-gray-50"
+                    } hover:bg-gray-100 text-left`}
+                  >
                     <td className="align-top px-4 py-3 font-medium text-gray-800">
                       {award.title}
                     </td>
@@ -137,14 +147,20 @@ const Awards: React.FC = () => {
           </div>
         </div>
 
+        {/* ====== ACADEMIC RANKINGS ====== */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <div className="bg-green-600 text-white px-6 py-4">
-            <h3 className="text-lg font-semibold">Academic Rankings &amp; Achievements</h3>
+            <h3 className="text-lg font-semibold">
+              Academic Rankings &amp; Achievements
+            </h3>
           </div>
           <div className="p-6">
             <div className="space-y-4">
               {academicRankings.map((ranking, index) => (
-                <div key={index} className="flex items-start pb-4 border-b last:border-b-0">
+                <div
+                  key={index}
+                  className="flex items-start pb-4 border-b last:border-b-0"
+                >
                   <span className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0 text-sm">
                     {index + 1}
                   </span>
@@ -159,6 +175,7 @@ const Awards: React.FC = () => {
         </div>
       </div>
 
+      {/* ====== SUMMARY SECTION ====== */}
       <div className="mt-8 bg-blue-50 rounded-lg p-6 border-l-4 border-blue-600">
         <h3 className="font-semibold text-blue-900 mb-3">Recognition Summary</h3>
         <ul className="space-y-2 text-gray-700">
